@@ -15,6 +15,7 @@ using Microsoft.Framework.Logging.Console;
 using SuperDeploy.Models;
 using Microsoft.Data.Entity;
 using SuperDeploy.DAL;
+using SuperDeploy.Supervisor;
 
 namespace SuperDeploy
 {
@@ -42,6 +43,9 @@ namespace SuperDeploy
                 .AddDbContext<SuperDeployDbContext>(options =>
                     options.UseSqlite($@"Data Source={Configuration["Database"]}"));
             services.AddSingleton(_ => Configuration);
+            services.AddSingleton(
+                _ => new SupervisorClient(Configuration["Supervisor:Hostname"],
+                        Convert.ToInt32(Configuration["Supervisor:Port"])));
             services.AddScoped<IApplicationRepository, ApplicationRepository>();
 
             // Uncomment the following line to add Web API services which makes it easier to port Web API 2 controllers.
