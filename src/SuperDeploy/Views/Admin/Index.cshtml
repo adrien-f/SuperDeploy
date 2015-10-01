@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Administration";
+}
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-12 m-b-md">
+      <h1><icon name="cog"></icon> Administration</h1>
+      <hr />
+      <p>Manage applications and settings.</p>
+    </div>
+    <div class="col-md-12">
+      <h3><icon name="cloud"></icon> Applications <a asp-controller="AdminApplications" asp-action="New" class="btn btn-sm btn-primary-outline pull-right"><icon name="plus"></icon> Add application</a></h3>
+      <br />
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+          </tr>
+        </thead>
+      </table>
+    </div>
+  </div>
+</div>

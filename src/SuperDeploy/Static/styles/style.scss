@@ -1,0 +1,14 @@
+﻿
+$font-family-base: "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+
+@import "../../bower_components/bootstrap/scss/bootstrap.scss";
+
+.navbar {
+    margin-bottom: 20px;
+    border-radius: 0;
+}
+
+.help-block {
+    margin-top: 10px;
+    display: block;
+}

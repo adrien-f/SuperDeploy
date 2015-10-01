@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>@ViewData["Title"] - SuperDeploy</title>
+
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
+  <environment names="Development">
+    <link rel="stylesheet" href="~/css/style.css" />
+  </environment>
+  <environment names="Staging,Production">
+    <link rel="stylesheet" href="~/css/style.css" asp-file-version="true" />
+  </environment>
+</head>
+<body>
+  <nav class="navbar navbar-dark bg-danger">
+    <div class="container">
+      <a asp-controller="Home" asp-action="Index" class="navbar-brand"><icon name="key"></icon> SuperDeploy</a>
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" asp-controller="Admin" asp-action="Index"><icon name="cog"></icon> Administration</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    @Html.Partial("_Alerts")
+  </div>
+
+  @RenderBody()
+
+
+  @RenderSection("scripts", required: false)
+</body>
+</html>
