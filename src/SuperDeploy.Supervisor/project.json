@@ -1,0 +1,14 @@
+{
+  "version": "1.0.0-*",
+  "description": "SuperDeploy.Supervisor Class Library",
+  "authors": [ "Class Library template" ],
+  "tags": [""],
+  "projectUrl": "",
+  "licenseUrl": "",
+  "dependencies": {
+    "xmlrpcnet": "3.0.0.266"
+  },
+  "frameworks": {
+    "dnx451": { }
+  }
+}
