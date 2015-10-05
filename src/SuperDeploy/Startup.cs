@@ -58,13 +58,12 @@ namespace SuperDeploy
         {
             loggerFactory.MinimumLevel = LogLevel.Information;
             loggerFactory.AddConsole();
-
+            app.UseErrorPage();
             // Configure the HTTP request pipeline.
 
             // Add the following to the request pipeline only in development environment.
             if (env.IsDevelopment())
             {
-                app.UseBrowserLink();
                 app.UseErrorPage();
             }
             else

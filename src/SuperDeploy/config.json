@@ -3,5 +3,6 @@
   "Supervisor": {
     "Hostname": "127.0.0.1",
     "Port": 9111
-  }
+  },
+  "Database": "superdeploy.sqlite"
 }

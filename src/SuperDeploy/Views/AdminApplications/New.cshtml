@@ -3,7 +3,7 @@
 @model SuperDeploy.ViewModels.NewApplicationViewModel
 @inject SupervisorClient SupervisorClient
 @{
-  ViewBag["Title"] = "New Application";
+  ViewBag.Title = "New Application";
   var processes = new List<Process>(SupervisorClient.Api.GetAllProcesses()).Select(x => new SelectListItem {Text = x.Name, Value = x.Name});
 }
 
@@ -16,12 +16,10 @@
         <fieldset class="form-group">
           <label class="control-label">Application</label>
           @Html.DropDownList("SelectedProcess", processes, new {@class="form-control"})
-          <span class="text-muted help-block">Listing of Supervisor processes</span>
         </fieldset>
         <fieldset class="form-group">
           <label class="control-label">Name</label>
           <input class="form-control" asp-for="Name" required min="3"/>
-          <span class="text-muted help-block">Name to display</span>
         </fieldset>
         <button class="btn btn-block btn-success-outline"><icon name="check"></icon> Save</button>
       </form>

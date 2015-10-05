@@ -11,7 +11,7 @@ namespace SuperDeploy.Supervisor.Tests
 
         public SupervisorTests()
         {
-            _client = new SupervisorClient("127.0.0.1", 8888);
+            _client = new SupervisorClient("127.0.0.1", 9111);
         }
 
         [Fact]

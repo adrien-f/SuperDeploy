@@ -6,58 +6,36 @@ using Microsoft.AspNet.Mvc;
 
 namespace SuperDeploy
 {
-    public class Alert
+    public enum AlertTypes 
     {
-        public const string TempDataKey = "TempDataAlerts";
-        public string AlertStyle { get; set; }
-        public string Message { get; set; }
-        public bool Dismissable { get; set; }
-    }
-
-    public static class AlertStyles
-    {
-        public const string Success = "success";
-        public const string Information = "info";
-        public const string Warning = "warning";
-        public const string Danger = "danger";
+        Success, Danger
     }
 
     public class BaseController : Controller
     {
-        public void Success(string message, bool dismissable = false)
+        public void Success(string message)
         {
-            AddAlert(AlertStyles.Success, message, dismissable);
+            AddAlert(AlertTypes.Success, message);
         }
 
-        public void Information(string message, bool dismissable = false)
+        public void Danger(string message)
         {
-            AddAlert(AlertStyles.Information, message, dismissable);
+            AddAlert(AlertTypes.Danger, message);
         }
 
-        public void Warning(string message, bool dismissable = false)
+        private void AddAlert(AlertTypes alertType, string message)
         {
-            AddAlert(AlertStyles.Warning, message, dismissable);
-        }
-
-        public void Danger(string message, bool dismissable = false)
-        {
-            AddAlert(AlertStyles.Danger, message, dismissable);
-        }
-
-        private void AddAlert(string alertStyle, string message, bool dismissable)
-        {
-            var alerts = TempData.ContainsKey(Alert.TempDataKey)
-                ? (List<Alert>)TempData[Alert.TempDataKey]
-                : new List<Alert>();
-
-            alerts.Add(new Alert
+            var ErrorsAlerts = TempData.ContainsKey("ErrorsAlerts") ? (Dictionary<string, string>) TempData["Errors"] : new Dictionary<string, string>();
+            var SuccessAlerts = TempData.ContainsKey("SuccessAlerts") ? (Dictionary<string, string>) TempData["Errors"] : new Dictionary<string, string>();
+            
+            if (alertType == AlertTypes.Success)
             {
-                AlertStyle = alertStyle,
-                Message = message,
-                Dismissable = dismissable
-            });
-
-            TempData[Alert.TempDataKey] = alerts;
+                SuccessAlerts.Add(Guid.NewGuid().ToString("N"), message);
+            } else {
+                ErrorsAlerts.Add(Guid.NewGuid().ToString("N"), message);
+            }
+            TempData["ErrorsAlert"] = ErrorsAlerts;
+            TempData["SuccessAlerts"] = SuccessAlerts;
         }
 
     }
