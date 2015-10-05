@@ -9,11 +9,6 @@
   "dependencies": {
     "xunit": "2.1.0-rc1-build3168",
     "xunit.runner.dnx": "2.1.0-beta5-build169",
-<<<<<<< HEAD
-=======
-    "Microsoft.Framework.TestHost": "1.0.0-*",
-    "Microsoft.Framework.ApplicationHost": "1.0.0-*",
->>>>>>> 26c17d74f72d68ec2226cfe4bb7acfecca4118e7
     "SuperDeploy.Supervisor": ""
   },
   "commands": {

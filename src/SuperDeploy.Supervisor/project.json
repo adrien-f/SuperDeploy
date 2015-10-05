@@ -5,17 +5,9 @@
   "tags": [""],
   "projectUrl": "",
   "licenseUrl": "",
-<<<<<<< HEAD
   "dependencies": {
     "xmlrpcnet": "3.0.0.266"
   },
-=======
-  
-  "dependencies": {
-      "xmlrpcnet": "2.5.0"
-  },
-
->>>>>>> 26c17d74f72d68ec2226cfe4bb7acfecca4118e7
   "frameworks": {
     "dnx451": { }
   }
