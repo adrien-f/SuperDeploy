@@ -10,16 +10,17 @@
     "Microsoft.AspNet.Server.WebListener": "1.0.0-beta7",
     "Microsoft.AspNet.StaticFiles": "1.0.0-beta7",
     "Microsoft.AspNet.Tooling.Razor": "1.0.0-beta7",
+    "Microsoft.AspNet.Server.Kestrel": "1.0.0-beta7",
     "Microsoft.Framework.Configuration.Json": "1.0.0-beta7",
     "Microsoft.Framework.Logging": "1.0.0-beta7",
     "Microsoft.Framework.Logging.Console": "1.0.0-beta7",
-    "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0-beta7",
     "EntityFramework.Sqlite": "7.0.0-beta7",
     "EntityFramework.Commands": "7.0.0-beta7",
     "SuperDeploy.Supervisor": ""
   },
 
   "commands": {
+    "kestrel": "Microsoft.AspNet.Hosting --server Microsoft.AspNet.Server.Kestrel --config hosting.ini",
     "ef": "EntityFramework.Commands",
     "web": "Microsoft.AspNet.Hosting --config hosting.ini"
   },
