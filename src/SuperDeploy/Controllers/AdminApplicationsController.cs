@@ -45,7 +45,7 @@ namespace SuperDeploy.Controllers
                 SupervisorId = model.SelectedProcess
             };
             await _applicationRepository.NewApplication(application);
-            Success($"Application {application.Name} added.", true);
+            Success($"Application {application.Name} added.");
             return RedirectToAction("Index", "Admin");
         }
     }
